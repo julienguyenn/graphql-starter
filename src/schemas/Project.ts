@@ -1,14 +1,16 @@
+// src/schemas/Project.ts
+
 import { Field, Int, ObjectType } from "type-graphql";
 import Task from "./Task";
 
-@ObjectType() // defines Project as a GraphQL type
+@ObjectType()
 export default class Project {
-    @Field(type => Int) // defines the fields (fields are optional)
+    @Field(type => Int)
     id: number;
 
     @Field()
     name: string;
 
     @Field(type => [Task])
-    task: Task[];
+    tasks: Task[];
 }
